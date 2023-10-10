@@ -1,9 +1,6 @@
 import { createRouter, createWebHistory} from 'vue-router'
 
 import Home from './../views/Home.vue'
-import About from './../views/About.vue'
-import Brazil from './../views/Brazil.vue'
-
 
 const routes = [
     {
@@ -12,19 +9,20 @@ const routes = [
         component: Home
     },
     {
-        path: '/about',
-        name: 'About',
-        component: About
-    },
-    {
         path: '/brazil',
         name: 'Brazil',
-        component: Brazil
+        component: () => import ('./../views/Brazil.vue')
+    },
+    {
+        path: '/panama',
+        name: 'Panama',
+        component: () => import ('./../views/Panama.vue')
     }
 ]
 
 const router = createRouter({
     history: createWebHistory(),
+    linkActiveClass: 'active_page',
     routes
 })
 
