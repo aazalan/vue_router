@@ -9,14 +9,9 @@ const routes = [
         component: Home
     },
     {
-        path: '/brazil',
-        name: 'Brazil',
-        component: () => import ('./../views/Brazil.vue')
-    },
-    {
-        path: '/panama',
-        name: 'Panama',
-        component: () => import ('./../views/Panama.vue')
+        path: '/destination/:id/:slug',
+        name: 'destination.show',
+        component: () => import ('./../views/Destination.vue')
     }
 ]
 
